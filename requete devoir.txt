@@ -1,0 +1,11 @@
+1.use mabase
+2.db.createCollection("iset")
+3.db.iset.insert({nom:'hamza',pre:'hbl',class:'dsi51',note:10.00})
+4.db.iset.find()
+
+5.db.iset.find({nom:'haj bg'})
+db.iset.find({note:{$gte:10.00}})
+6.db.iset.find({nom:{$in:['hamza','mmmmm']}})
+7.mongoimport --db mabase -collection iset c:programmes/mongo
+db.iset.getIndexes() or drop index 
+db.iset.aggregate([{$project:{_id:"$nom",moyenne:{$avg:"$notes"}}}])
